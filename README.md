@@ -1,5 +1,5 @@
 # doc
-将自己学习Go过程中的笔记汇总成文档。如果发现了本项目里的问题或者想了解本项目里还没涉及到的技术栈，欢迎提交[issue](https://github.com/shershon1991/doc/issues/new)。
+将自己学习过程中的笔记汇总成文档。如果发现了本项目里的问题或者想了解本项目里还没涉及到的技术栈，欢迎提交[issue](https://github.com/shershon1991/doc/issues/new)。
 
 如果觉得本项目不错，欢迎给个**Star**。
 
@@ -18,6 +18,15 @@ blog访问地址：http://blog.shershon.top/
 * [Gin集成](./go-doc/Gin集成)
 * [框架开发](./go-doc/框架开发)
 * [工具篇](./go-doc/工具篇)
+
+## blog
+
+* [计算机基础](./doc-v2/计算机基础)
+* [编程](./doc-v2/编程)
+* [后端技术](./doc-v2/后端)
+* [源码](./doc-v2/源码)
+* [专题](./doc-v2/专题)
+* [其他](./doc-v2/其他)
 
 # 关注公众号，查看更多文章
 ![wechat_offcial](https://raw.githubusercontent.com/shershon1991/picImgBed/master/personal/wechat_official.png)
