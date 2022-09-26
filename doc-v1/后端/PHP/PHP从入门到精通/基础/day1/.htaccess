@@ -1,3 +1,0 @@
-#Deny from all
-#Allow from   169.254.203.50
-DirectoryIndex 1base.php
