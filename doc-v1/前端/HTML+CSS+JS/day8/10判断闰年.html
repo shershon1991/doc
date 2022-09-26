@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	var year = window.prompt("请输入一个年份");
+	if(year===null)
+	{
+		document.write("您已经取消操作了");
+	}else
+	{
+		/*
+			闰年的条件：
+			（1）能被4整除但不能被100整除
+			（2）能被400整除
+			（3）条件（1）和条件（2）是“或”的关系
+		*/
+		if(year%4 == 0 && year%100 != 0 || year%400 == 0){
+			document.write(year + "是闰年");
+		}else
+		{
+			document.write(year + "是平年");
+		}
+	}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

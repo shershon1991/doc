@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>网页标题</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="keywords" content="关键词列表" />
+	<meta name="description" content="网页描述" />
+	<style type="text/css">
+		div{
+			border:1px solid red;
+			width:491px;
+		}
+		div ul{
+			float:right;
+		}
+		ul li{
+			list-style:none;
+			border:1px solid red;
+			width:25px;
+			height:25px;
+			margin-top:2px;
+			margin-right:30px;
+			text-align:center;
+			line-height:22px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=init;
+		var i = 1;
+		var dingshiqi;
+		function init(){
+			var obj = document.getElementById("li1");
+			obj.style.background = "orange";
+		    dingshiqi = window.setInterval("tupian()", 1000);
+		}
+		function tupian(){
+			i++;
+			if(i>6){
+				i = 1;
+			}
+			var obj = document.getElementById("d1");
+			obj.src="images/" +i+ ".jpg";
+			ys();
+			var yanse = document.getElementById("li"+i);
+			yanse.style.background = "orange";
+		}
+		function stopTu(){
+			window.clearInterval(dingshiqi);
+		}
+		function startTu(){
+			dingshiqi = window.setInterval("tupian()", 1000);
+		}
+		function tingTu(n, m){
+			i = n;
+			var obj = document.getElementById("d1");
+			obj.src = "images/"+n+".jpg";
+			window.clearInterval(dingshiqi); 
+			ys();
+			m.style.background = "orange";
+		}
+		function dongTu(){
+			dingshiqi = window.setInterval("tupian()", 1000);
+		}
+		function ys(){
+			for(var j=1;j<=6;j++){
+				var obj = document.getElementById("li"+j);
+				obj.style.background = "white";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<img id="d1" src="images/1.jpg" onmouseover="stopTu()" onmouseout="startTu()" />
+		<ul>
+			<li id="li1" onmouseover="tingTu(1,this)" onmouseout="dongTu()">1</li>
+			<li id="li2" onmouseover="tingTu(2,this)" onmouseout="dongTu()">2</li>
+			<li id="li3" onmouseover="tingTu(3,this)" onmouseout="dongTu()">3</li>
+			<li id="li4" onmouseover="tingTu(4,this)" onmouseout="dongTu()">4</li>
+			<li id="li5" onmouseover="tingTu(5,this)" onmouseout="dongTu()">5</li>
+			<li id="li6" onmouseover="tingTu(6,this)" onmouseout="dongTu()">6</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div{
+			width:100px;
+			height:100px;
+			background: red;
+		}
+	</style>	
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div></div>
+	<input type="button" value="显示" id="d1" />
+	<input type="button" value="隐藏" id="d2" />
+	<input type="button" value="切换" id="d3" />
+</body>
+</html>
+
+<script type="text/javascript">
+    $("#d1").click(function (){
+        $("div").show(3000, function (){
+            alert("show完成");
+		});
+	});
+    $("#d2").click(function (){
+        $("div").hide(5000, function (){
+            alert("hide完成");
+		});
+	});
+    $("#d3").click(function (){
+        $("div").toggle(3000, function (){
+            alert("已经切换");
+		});
+	})
+</script>

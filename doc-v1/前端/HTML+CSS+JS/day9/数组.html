@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script type="text/javascript">
+		//数组的创建
+		//1.使用new和Array()
+		//var arr = new Array("张三", "男", 23);//张三,男,23 
+		// var arr = new Array();
+		// arr[0] = "张三";
+		// arr[1] = "男";
+		// arr[2] = 23;
+		// var arr = ["张三", "男", 23];
+
+		//2.使用[]
+		var arr = ["张三", "男", 23, "本科"];
+		document.write(arr);
+		document.write("<hr />");
+		//添加元素只能往后添加，往前面添加的话，得使用数组对象的方法（后面讲）
+		arr[4] = "北京大学";//添加的下标可以是不连续的，下标4-10之间的下标存在，但值为undefined
+		arr[10] = "湖北省";
+		document.write(arr);
+		document.write("<hr />");
+		//删除元素
+		delete arr[10];
+		document.write(arr);//删除的只是值，下标还存在。
+	</script>
+</head>
+<body>
+
+</body>
+</html>

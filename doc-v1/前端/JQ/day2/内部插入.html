@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div>这是div</div>
+	<p>段落2</p>
+	<input type="button" value="点击" />
+</body>
+</html>
+
+<script type="text/javascript">
+    $("input").click(function (){
+        //$("div").append($("<p>段落1</p>"));
+        //$("<p>段落1</p>").appendTo($("div"));
+		//$("div").prepend($("<p>段落1</p>"));
+		$("<p>段落1</p>").prependTo($("div"));
+	})
+</script>

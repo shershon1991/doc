@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+<form name="form1" method="post" action="login.php" enctype="multipart/form-data">
+<table width="600" border="1" bordercolor="#f0f0f0" align="center" cellpadding="5" rules="all">
+	<caption><h2>用户注册表</h2></caption>
+	<tr>
+		<td width="100" align="right">用户名：</td>
+		<td><input type="text" name="username" /></td>
+	</tr>
+	<tr>
+		<td align="right">密码：</td>
+		<td><input type="text" name="userpwd" /></td>
+	</tr>
+	<tr>
+		<td align="right">性别：</td>
+		<td>
+			<input type="radio" name="sex" value="男" checked="checked" />男
+			<input type="radio" name="sex" value="女" />女
+		</td>
+	</tr>
+	<tr>
+		<td align="right">籍贯：</td>
+		<td>
+			<select name="city" style="width:100px;">
+				<option value="北京市">北京市</option>
+				<option value="上海市">上海市</option>
+				<option value="广州市" selected="selected">广州市</option>
+				<option value="深圳市">深圳市</option>
+			</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right">上传头像：</td>
+		<td>
+			<input type="file" name="uploadFile" />
+		</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>
+		<input type="submit" value="提交表单" />
+		<input type="reset" value="重新填写" />
+		<input type="hidden" name="id" value="1231" />
+	</td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

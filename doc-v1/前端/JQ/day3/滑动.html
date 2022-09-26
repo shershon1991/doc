@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div{
+			width:100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div></div>
+	<input type="button" value="slideDown" id="d1" />
+	<input type="button" value="slideUp" id="d2" />
+	<input type="button" value="slideToggle" id="d3" />
+	<script type="text/javascript">
+		$("#d1").click(function (){
+		    $("div").slideDown(3000, function(){
+		        alert("下滑完成");
+			});
+		})
+		$("#d2").click(function (){
+		    $("div").slideUp(3000, function (){
+		        alert("收起完成");
+			});
+		});
+		$("#d3").click(function (){
+		    $("div").slideToggle(1000, function (){
+		        alert("切换完成");
+			});
+		});
+	</script>
+</body>
+</html>

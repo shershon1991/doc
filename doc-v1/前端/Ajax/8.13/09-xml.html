@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>利用ajax+js实现对xml的接收和处理</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <style type="text/css">
+        </style>
+    </head>
+    <body>
+        <h2>利用ajax+js实现对xml的接收和处理</h2>
+        <input type="button" value="触发" onclick="f1()" />
+        <div id="result"></div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    function f1(){
+        //ajax请求xml信息回来
+        //javascript的dom技术处理xml
+        //1.创建ajax对象
+        var xhr = new XMLHttpRequest();
+        //4.设置ajax事件
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState==4){
+                // alert(xhr.responseXML);//object XMLDocument 其是xml根节点的父节点对象
+                var xmldom = xhr.responseXML;
+                var citys = xmldom.getElementsByTagName('city');
+                //console.log(citys);//HTMLCollection[city, city, city]
+                //citys[1] //代表第二个city的元素节点对象
+                // for(var k in citys[1]){//k代表元素节点对象的成员名称
+                //     //有输出其中一个方法：getElementsByTagName
+                //     //结论：document对象和普通元素对象都可以调用getElementsByTagName
+                //   console.log(k);
+                // }
+                var s = "";
+                for(var i=0; i<citys.length; i++){
+                    var nm = citys[i].getElementsByTagName('name')[0].firstChild.nodeValue;
+                    var temp = citys[i].getElementsByTagName('temp')[0].firstChild.nodeValue;
+                    var wind = citys[i].getElementsByTagName('wind')[0].firstChild.nodeValue;
+                    s += "城市："+nm+"--温度："+temp+"--风向："+wind+"<br />";
+                }
+                document.getElementById('result').innerHTML = s;
+            }
+        }
+        //2.创建新的http请求
+        xhr.open('get', './09.xml');
+        //3.发送请求
+        xhr.send(null);
+    }
+</script>

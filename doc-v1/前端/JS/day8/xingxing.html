@@ -1,0 +1,82 @@
+<html>
+<head>
+  <style type="text/css">
+	#d1{
+	  color:red;
+	}
+	#d2{
+	  width:100px;
+	  height:20px;
+	  border:1px solid red;
+	  display:inline-block;
+	}
+	#d3{
+	  display:inline-block;
+	  background:yellow;
+	  height:20px;  
+	}
+  </style>
+  <script type="text/javascript">
+    //window.onload=init;
+    var dingshiqi;
+    var sj;
+    var count = 0;//记录星星个数的变量
+    var n = 0;//记录游戏时间的变量
+    function startGame(){
+	window.clearInterval(sj);
+	window.clearInterval(dingshiqi);
+	sj = window.setInterval("shijian()", 1000);
+	dingshiqi = window.setInterval("star()", 800);
+    }
+    function star(){
+	//创建星星
+	var obj = document.createElement("img");
+	//给星星添加src属性
+	obj.src="xingxing.gif";
+	//随机星星大小
+	var w = Math.floor(Math.random()*80+20);
+	obj.width = w;
+	//随机位置
+	var x = Math.floor(Math.random()*1240+100);
+	var y = Math.floor(Math.random()*400+150);
+	obj.style.position = "absolute";
+	obj.style.top = y + "px";
+	obj.style.left = x + "px";
+	//绑定点击事件
+	obj.onclick = removeStar;
+	count++;
+	var sp = document.getElementById("d3");
+	sp.style.width=count*5 + "px";
+	if(count>=20){
+	  alert("游戏结束");
+	  window.clearInterval(dingshiqi);
+	  location.reload();
+	}
+	//放到body中
+	document.body.appendChild(obj);
+    }
+    //点击后删除星星的函数
+    function removeStar(){
+	this.parentNode.removeChild(this);
+	count--;
+	var sp = document.getElementById("d3");
+	sp.style.width=count*5 + "px"; 
+    }
+    function stopGame(){
+	alert("暂停游戏");
+    }
+    //记录游戏时间的函数
+    function shijian(){
+	n++;
+	var obj = document.getElementById("d1");
+	obj.innerHTML=n;
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="开始游戏" onclick="startGame()">
+  <input type="button" value="暂停游戏" onclick="stopGame()">
+  游戏进行了<span id="d1">0</span>秒
+  <span id="d2"><span id="d3"></span></span>
+</body>
+</html>

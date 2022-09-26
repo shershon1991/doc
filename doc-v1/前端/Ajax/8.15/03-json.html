@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>接收/处理json信息</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+    </head>
+    <body>
+        <h2>接收/处理json信息</h2> 
+        <input type="button" value="获得天气" onclick="get_weather()" />
+    </body>
+</html>
+
+<script type="text/javascript">
+    function get_weather(){
+        //ajax去请求接收json信息
+        //js做后期处理
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                //alert(xhr.responseText);//string
+                //把接收的json字符串变为具体的object的json信息
+                eval("var jn_info="+xhr.responseText);
+                console.log(jn_info);
+                console.log(jn_info.city);
+                console.log(jn_info.temp);
+                console.log(jn_info.WD);
+            }
+        }
+        xhr.open('get', './03.php');
+        xhr.send(null);
+    }
+
+    /*//在JS里面把字符串string变为对象object
+    var obj = "{name:'kitty', age:5}";
+    //eval(字符串参数)   字符串参数变为表达式运行
+    eval("var cat="+obj);//eval("var cat={name:'kitty', age:5}");
+    console.log(cat);*/
+</script>

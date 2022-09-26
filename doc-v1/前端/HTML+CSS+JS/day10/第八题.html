@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	//定义一个数组，求出其中的最大值和最小值以及各自的下标是多少？
+	arr = [1,2,9,4,5,6,-1];
+	var max = arr[0];
+	var maxIndex = 0;
+	var min = arr[0];
+	var minIndex = 0;
+	var n = arr.length;
+	for(i=1;i<=n;i++){
+		if(arr[i]>max){
+			max = arr[i];
+			maxIndex = i;
+		}
+		if(arr[i]<min){
+			min = arr[i];
+			minIndex = i;
+		}
+	}
+	document.write("最大值："+max+",对应元素下标："+maxIndex+"<br />");
+	document.write("最小值："+min+",对应元素下标："+minIndex);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+在Windows下使用gcc软件
+1.必须是提前安装了gcc这个程序
+2.在Windows系统path的环境变量中，代表Windows从哪里寻找程序和相关的路径用“;”分割
+在path中添加：
+C:\Qt\Qt5.3.0\Tools\mingw482_32\bin\
+C:\Qt\Qt5.3.0\5.3\mingw482_32\bin\
+3.打开命令窗口，输入gcc -v，如果看到gcc版本提示，代表gcc配置成功
+4.打开Qt生成一个空的项目，编译后，如果在我的电脑中双击生成的程序也能运行，代表Qt配置成功
+
+配置Unix的gcc，以达到你可以使用gcc编译你在Unix写的C语言的hello world
+配置windows的gcc，以达到你可以使用gcc编译你在windows写的C语言的hello world

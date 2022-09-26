@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	//根据用户输入的分数，判断其评语
+	var score = window.prompt("请输入您的分数(满分100分)");
+	//alert(typeof score);
+	//exit;
+	var str;	
+	//（1）条件判断语句
+	if(score >= 90)
+	{
+		str = "优秀";
+	}else if(score >= 80)
+	{
+		str = "良好";
+	}else if(score >=70)
+	{
+		str = "中等";
+	}else if(score >=60)
+	{
+		str = "及格";
+	}else
+	{
+		str = "不及格";
+	}
+	//（2）三元运算符
+	//str = score >= 90 ? "优秀" : score >= 80 ? "良好" : score >=70 ? "中等" : score >=60 ? "及格" : "不及格";
+	document.write(str);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

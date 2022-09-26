@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	</style>	
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div>这是div</div>
+	<input type="button" value="点击" />
+</body>
+</html>
+
+<script type="text/javascript">
+    // $("input").bind("click", function (){
+     //    alert("这是bind!");
+	// });
+	// $("div").bind("mouseover", function (){
+	//     $("div").html("这是mouseover");
+	// });
+	$("div").bind({"mouseover":function (){
+	    	$("div").html("这是mouseover");
+		}, "mouseout":function (){
+	    	$("div").html("这是mouseout")
+		}});
+	// $("input").bind("click", function (){
+	//     $("div").unbind("mouseout");
+	// });
+    $("input").bind("click", function (){
+        $("div").unbind();
+    });
+</script>

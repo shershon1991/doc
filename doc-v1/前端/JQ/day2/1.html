@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html" charset=utf-8 />
+	<script type="text/javascript" src="jquery-1.11.3.min.js">
+	</script>
+</head>
+<body>
+	<script>
+		$(document).ready(function (){
+			var type="123";
+			$("button").click(function (){
+				$.post("1.php",{
+					type:type,
+				},
+				function (data,status){
+					alert("数据：" + data + "\n状态：" + status);
+				});
+			});
+		});
+	</script>
+	<button>向页面发送Http POST请求时，获得返回的结果</button>
+</body>
+</html>
