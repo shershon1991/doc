@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	window.onload = init;
+	function init(){
+		var screenWidth = screen.availWidth;	//屏幕的有效宽度
+		var screenHeight = screen.availHeight;	//屏幕的有效宽高度
+		var width = 400;
+		var height = 300;
+		var x = (screenWidth-width)/2;
+		var y = (screenHeight-height)/2;
+		var url2 = "";
+		var name2 = "win2";
+		var options2 = "width="+width+",height="+height+",left="+x+",top="+y+",menubar=no,toolbar=no";
+		var winObj = window.open(url2, name2, options2);
+		winObj.document.write("这是新窗口的内容");
+		winObj.setTimeout("window.close()", 5000);
+	}
+
+		//测试当前网页的宽度和高度
+		//兼容所有浏览器
+		/*var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth;
+		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight;
+		document.write("宽度"+width+"，高度"+height);*/
+	</script>
+</head>
+<body>
+
+</body>
+</html>

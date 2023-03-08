@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	//实例：输出个人信息
+	//（1）变量初始化
+	var name = "周更生";
+	var sex = "男";
+	var age = 23;
+	var isMarried = true;
+	var salary = 2000;
+	var bonus = 500;
+	var school = "重庆工商大学";
+	//（2）构建输出的结果
+	var str = "<h1 style=\"color:red;\">\""+name+"\"的基本信息如下：</h1>";
+	str += "<br />姓名：" + name;
+	str += "<br />性别：" + sex;
+	str += "<br />年龄：" + age;
+	str += "<br />婚否：" + (isMarried ? "已婚" : "未婚");
+	str += "<br />基本工资：" + salary;
+	str += "<br />奖金：" + bonus;
+	str += "<br />实发工资：" + (salary + bonus);
+	str += "<br />毕业院校：" + (school ? school : "未填写");
+	//（3）输出结果
+	document.write(str+"<hr />");
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

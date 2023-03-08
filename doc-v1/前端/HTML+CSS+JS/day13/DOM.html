@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	// window.onload = function(){
+	// 	var node_body = document.body;
+	// 	var imgObj = node_body.firstChild;
+	// 	imgObj.setAttribute("src","./images/1.jpg");
+	// 	imgObj.setAttribute("width","400");
+	// 	imgObj.setAttribute("border","2");
+	// 	imgObj.setAttribute("style","cursor:pointer;");
+	// 	imgObj.removeAttribute("border");
+	// }
+
+	// //网页加载完成后
+	// window.onload = function(){
+	// 	//创建一个<img>标记
+	// 	var imgObj = document.createElement("img");
+	// 	//增加属性
+	// 	imgObj.setAttribute("src","./images/1.jpg");
+	// 	imgObj.setAttribute("width","400");
+	// 	//将创建的图片节点，挂在到某个父节点下
+	// 	document.body.appendChild(imgObj);
+	// }
+
+	window.onload = function(){
+		//创建一个<img>标记
+		var imgObj = document.getElementById("img1");
+		//增加属性
+		imgObj.src = "./images/2.jpg";
+		imgObj.width = 400;
+		imgObj.border = 2;
+		imgObj.style = "cursor:pointer";
+		imgObj.title = "小星星图片";
+		imgObj.parentNode.bgColor = "#666";
+	}
+	</script>
+</head>
+<body>
+<img id="img1" src="./images/1.jpg" />
+</body>
+</html>

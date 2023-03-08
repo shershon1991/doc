@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../style/common.css" />	
+	<script type="text/javascript">
+	function check(){
+		//验证商品名称
+		var proname=document.getElementById('proname');
+		if(proname.value==''){
+			alert('商品名称不能为空');
+			proname.focus();  //获得焦点
+			return false;
+		}
+		//验证商品规格
+		var proguige=document.getElementById('proguige');
+		if(proguige.value==''){
+			alert('商品规格不能为空');
+			proguige.focus();
+			return false;
+		}
+		//验证价格
+		var proprice=document.getElementById('proprice');
+		if(proprice.value=='' || isNaN(proprice.value)){
+			alert('价格必须是一个数字');
+			proprice.select();  //选中内容
+			return false;
+		}
+		//验证库存量
+		var proamount=document.getElementById('proamount');
+		if(proamount.value=='' || isNaN(proamount.value) || proamount.value.indexOf('.') != -1){
+			alert('库存量必须是一个整数');
+			proamount.select();
+			return false;
+		}
+	}
+	</script>
+</head>
+<body>
+<form name="form1" method="post" action="" onSubmit="return check()">
+	<table width="500" border="1">
+		<tr>
+			<td>商品名称</td>
+			<td><input type="text" name="proname"></td>
+		</tr>
+		<tr>
+			<td>商品规格</td>
+			<td><input type="text" name="proguige"></td>
+		</tr>
+		<tr>
+			<td>价格</td>
+			<td><input type="text" name="proprice"></td>
+		</tr>
+		<tr>
+			<td>库存量</td>
+			<td><input type="text" name="proamount"></td>
+		</tr>
+		<tr>
+			<td>图片地址</td>
+			<td><input type="text" name="proimages"></td>
+		</tr>
+		<tr>
+			<td>网址</td>
+			<td><input type="text" name="proweb"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="button" value="提交">
+			<input type="button" name="button2" value="返回" onClick="location.href='admin.php'"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

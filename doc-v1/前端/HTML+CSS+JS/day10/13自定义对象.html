@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	//（1）使用new关键字结合构造函数Object()来创建一个空的对象
+	var obj = new Object();
+	//增加属性
+	obj.name = "张三";
+	obj.sex = "男";
+	obj.age = 24;
+	obj.isMarried = true;
+	obj.edu = "大专";
+	obj.school;
+	//增加方法：将一个函数定义赋给了对象属性，那么该属性变成方法。
+	obj.showInfo = function (){
+		var str = '<h2>'+obj.name+'的基本信息</h2>';
+		str += '姓名：'+obj.name;
+		str += '<br />性别：'+obj.sex;
+		str += '<br />年龄：'+obj.age;
+		str += '<br />婚否：'+obj.isMarried;
+		str += '<br />学历：'+obj.edu;
+		str += '<br />学校：'+(obj.school ? school : "未填写");
+		return str;
+	}
+	//调用对象方法，并输出结果
+	document.write(obj.showInfo());
+	document.write("<hr />");
+	//（2）使用大括号{}来创建一个对象
+	var obj = {
+				name : "张三",
+				sex : "男",
+				age : 34,
+				isMarried : true,
+				edu : "大专",
+				school : undefined,
+				showInfo : function (){
+					var str = '<h2>'+obj.name+'的基本信息</h2>';
+					str += '姓名：'+obj.name;
+					str += '<br />性别：'+obj.sex;
+					str += '<br />年龄：'+obj.age;
+					str += '<br />婚否：'+obj.isMarried;
+					str += '<br />学历：'+obj.edu;
+					str += '<br />学校：'+(obj.school ? school : "未填写");
+					return str;
+				}
+		      };
+    //调用对象的方法
+    document.write(obj.showInfo());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

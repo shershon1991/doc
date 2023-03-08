@@ -1,0 +1,37 @@
+<html onclick="star(event)">
+	<head>
+		<title></title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta type="description" content="" />
+		<meta type="keywords" content="" />
+
+		<script type="text/javascript">
+			//让页面出现星星
+			function star(e){
+				//alert(123);
+				//创建一个星星
+				var obj = document.createElement("img");
+				//添加src属性
+				obj.src="xingxing.gif";
+				//假设让星星的大小在20到100之间随机
+				 var w = Math.floor(Math.random()*80+20);
+				 obj.width = w; 
+				//找到鼠标点击时候的坐标位置
+				var x = e.clientX;
+				var y = e.clientY;
+				obj.style.position = "absolute";
+				obj.style.top = y+"px";
+				obj.style.left = x+"px";
+				//放到body里面
+				document.body.appendChild(obj);
+			}
+		</script>
+
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>

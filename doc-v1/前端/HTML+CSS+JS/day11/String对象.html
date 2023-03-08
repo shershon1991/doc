@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	/*//charAt():返回指定下标位置的一个字符
+	var str = "好好学习，天天向上，学好php";
+	str = str.toUpperCase(str);
+	//document.write(str);
+	for(var i=0;i<str.length;++i){
+		document.write(str.charAt(i)+"<br />");
+	}*/
+
+	/*//indexOf():返回一个子字符串在原始字符串中的索引值，如果没有，返回-1
+	var email = window.prompt("请输入您的邮箱");
+	if(email.indexOf("@") == -1){
+		document.write(email+"不合法！");
+	} else{
+		document.write(email+"合法！");
+	}*/
+
+	//实例：判断文件名是否为图片
+	var arr = ["jpg","png","gif"];
+	var filename = "2017.08.27.g7if";
+	var index = filename.lastIndexOf(".");
+	var ext = filename.substr(index+1);
+	var flag = false;
+	for(var i=0;i<arr.length;++i){
+		if(ext == arr[i]){
+			flag = true;
+		}
+	}
+	if(flag){
+		document.write("文件名"+filename+"合法");
+	} else{
+		document.write("<font color='red'>文件名"+filename+"不合法</font>");
+	}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

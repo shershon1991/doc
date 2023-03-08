@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>网页标题</title>
+  <meta name="keywords" content="关键字列表" />
+  <meta name="description" content="网页描述" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript">
+	function fn(){
+		//检测用户上传的文件是否符合要求
+		/*var obj=document.getElementById("d2");
+		var zhi=obj.value;
+		alert(zhi );*/
+		var obj = document.getElementById("d1");
+		var zhi = obj.value;//1.jpg
+		//1.先找到点的位置
+		//2.截取点后面的内容 
+		var dian = zhi.lastIndexOf(".");//找到点的位置
+		var houzhui = zhi.substr(dian+1);//截取点后面的内容
+		houzhui = houzhui.toLowerCase();
+		//alert(houzhui);//jpg 
+		if(houzhui == "jpg"||houzhui == "png"||houzhui == "gif"){
+			alert("上传成功");
+		}
+		else{
+			alert("上传失败");
+		}
+	}
+  </script>
+</head>
+<body>
+	<input type="file" id="d1" />
+	<input type="button" id="d2" value="提交" onclick="fn()"/>
+</body>
+</html>

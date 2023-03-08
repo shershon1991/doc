@@ -1,0 +1,28 @@
+<html>
+<head>
+  <style type="text/css">
+    #d1{
+	font-size:60px;
+	color:red;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload=init;
+    function init(){
+	window.setTimeout("tiaozhuan()", 5000);
+	window.setInterval("shijian()", 1000);
+    }
+    function tiaozhuan(){
+	location.replace("http://www.baidu.com");
+    }
+    function shijian(){
+	var obj = document.getElementById("d1");
+	var n = obj.innerHTML;
+	obj.innerHTML = n-1;
+    }
+  </script>
+</head>
+<body>
+  账号注册成功，页面会在<span id="d1">5</span>秒后自动跳转到首页
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meat name="keywords" content="" />
+  <meat name="description" content="" />
+</head>
+<body>
+  <form action="login.php" method="post" onsubmit="return check()">
+    email:<input type="text" id="email" />
+    密码：<input type="text" id="pwd">
+    <input type="submit" value="提交" />
+  </form>
+</body>
+</html>
+
+<script>
+function check(){
+    var email = document.getElementById("email").value;
+    var pwd = document.getElementById("pwd").value;
+    if(email == ""){
+        alert("邮箱为空");
+        return false;
+    } else if(email.indexOf("@") == -1){
+        alert("email格式不正确");
+        return false;
+    } else if(pwd == ""){
+        alert("密码为空");
+        return false;
+    } else if(pwd.length < 6){
+        alert("密码长度小于6位");
+        return false;
+    } else{
+        return true;
+    }
+}
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="type:text/html;charset=utf-8" />
+	<title></title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+		.div1{
+			width:1000px;
+			height:300px;
+			background:red;
+		}
+		.div2{
+			width:1000px;
+			height:300px;
+			background:green;
+		}
+		.div3{
+			width:1000px;
+			height:300px;
+			background:blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<input type="button" value="装扮QQ空间1" id="div1" />
+	<input type="button" value="装扮QQ空间2" id="div2" />
+	<input type="button" value="装扮QQ空间3" id="div3" />
+</body>
+</html>
+
+<script type="text/javascript">
+    $('#div1').click(function (){
+        $('div').removeClass('div2');
+        $('div').removeClass('div3');
+        $('div').addClass('div1');
+    });
+    $('#div2').click(function (){
+        $('div').removeClass('div1');
+        $('div').removeClass('div3');
+        $('div').addClass('div2');
+    });
+    $('#div3').click(function (){
+        $('div').removeClass('div2');
+        $('div').removeClass('div1');
+        $('div').addClass('div3');
+    });
+</script>

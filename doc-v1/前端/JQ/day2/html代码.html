@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div>
+		这是div
+		<p>这是段落</p>
+		<a href="">这是链接</a>
+	</div>
+	<input type="button" value="点击" />
+</body>
+</html>
+
+<script type="text/javascript">
+    $('input').click(function (){
+        //console.log($('div').html());
+        //$('div').html('<b>加粗</b>');
+        //console.log($('div').text());
+        //$('div').text('这是新内容');
+        $('div').text('<b>这是新内容</b>');
+        // console.log($('input').val());
+    });
+</script>

@@ -1,0 +1,56 @@
+/*全局CSS样式设置*/
+body,ul,li,p,h4,a{margin: 0px;padding: 0px;}
+ul,li,ol{list-style: none;}
+a:link,a:visited{color:#444;text-decoration: none;}
+a:hover{color:red;}
+img{border:0px;}
+body{
+	font-size: 12px;
+	color:#444;
+	font-family:Arial,宋体;
+	text-align: center;	/*IE5.5主页居中*/
+	background:#ccc url(../images/bg-body.gif) repeat-x;
+}
+.box{width:1000px;
+	margin:0px auto;
+	text-align: left;
+}
+
+/*全局CSS类样式*/
+#red{color:red;}
+
+/*top层样式*/
+.top{height:27px;line-height: 27px;}
+.top span{float:left;color:#0174c7;}
+.top ul{float:right;}
+.top li{float:left;}
+.top a{padding:0px 10px;border-right:1px dotted #444;}
+.top .noLine{border:none;}
+
+/*logo层样式*/
+.logo{height:122px;}
+.logo .div1{width:210px;height: 99px;padding-top:23px;float:left;}
+.logo .div2{width:410px;height: 122px;float:right;}
+.logo .div2 h4{color:#0174c7;font-size: 28px;padding:10px 0px;}
+.logo .div2 li{
+	width:80px;
+	height:20px;
+	line-height: 20px;
+	padding:0px 10px 10px 5px;
+	float:left;
+	background:url(../images/) no-repeat;
+}
+.logo .div2 .li02{background:url(../images/) no-repeat;}
+.logo .div3{width:360px;height: 106px;padding-top:16px;float:right;}
+
+/*menu层样式*/
+.menu{
+	height:47px;
+	line-height: 47px;
+}
+.menu li{float:left;margin-right:8px;}
+.menu a{font-weight: bold;width:73px;height: 47px;display:block;text-align: center;}
+.menu a:hover{background:url(../images/) no-repeat;}
+.menu a.a1{width:85px;}
+.menu a.a1:hover{background:url(../iamges/) no-repeat;}
+.menu a.current{background:url(../images/) no-repeat;}

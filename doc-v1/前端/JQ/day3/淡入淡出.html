@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div{
+			width:100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div></div>
+	<input type="button" value="fadeIn" id="d1" />
+	<input type="button" value="fadeOut" id="d2" />
+	<input type="button" value="fadeToggle" id="d3" />
+	<input type="button" value="fadeTo" id="d4" />
+	<script type="text/javascript">
+		$("#d1").click(function (){
+		    $("div").fadeIn(3000, function (){
+		        alert("淡入完成");
+			});
+		});
+		$("#d2").click(function (){
+		    $("div").fadeOut(3000, function (){
+		        alert("淡出完成");
+			});
+		});
+		$("#d3").click(function (){
+		    $("div").fadeToggle(3000, function (){
+		        alert("切换完成");
+			});
+		});
+		$("#d4").click(function (){
+		    $("div").fadeTo(3000, 0.2, function (){
+		        alert("fadeTo完成");
+			});
+		});
+	</script>
+</body>
+</html>

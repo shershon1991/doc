@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding:0px;
+		}
+		dt{
+			background: red;
+			width:200px;
+			height: 30px;
+			line-height: 30px;
+			margin: 3px;
+		}
+		dd{
+			margin-left:10px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<dl>
+		<dt>收藏夹</dt>
+		<dd>桌面</dd>
+		<dd>最近访问的位置</dd>
+	</dl>
+	<dl>
+		<dt>这台电脑</dt>
+		<dd>视频</dd>
+		<dd>文档</dd>
+		<dd>图片</dd>
+		<dd>音乐</dd>
+		<dd>下载</dd>
+	</dl>
+	<dl>
+		<dt>网络</dt>
+		<dd>网络1</dd>
+		<dd>网络2</dd>
+		<dd>网络3</dd>
+		<dd>网络4</dd>
+		<dd>网络5</dd>
+	</dl>
+</body>
+</html>
+
+<script type="text/javascript">
+    $('dt').click(function (){
+        $(this).parent().find('dd').slideToggle();
+    });
+</script>

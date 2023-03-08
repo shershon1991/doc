@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--屏幕宽度和设备宽度一致，初始缩放1:1，禁止用户缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="background:#e6e6e6;">
+<h2 class="page-header">下拉列表</h2>
+    <div class="dropdown">
+        <button class="btn btn-default" data-toggle="dropdown">
+             登录 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">QQ登录</a></li>
+            <li><a href="#">微信登录</a></li>
+            <li class="divider"></li>
+            <li><a href="#">邮箱登录</a></li>
+            <li><a href="#">手机登录</a></li>
+            <li><a href="#">微博登录</a></li>
+        </ul>
+    </div>
+</div>
+
+<h2>标签页</h2>
+<ul class="nav nav-tabs"><!--普通式-->
+    <li class="active"><a href="">home1</a></li>
+    <li><a href="">home2</a></li>
+    <li><a href="">home3</a></li>
+</ul>
+<h2>标签页2</h2>
+<ul class="nav nav-pills"><!--胶囊式-->
+    <li class="active"><a href="">home1</a></li>
+    <li><a href="">home2</a></li>
+    <li><a href="">home3</a></li>
+</ul>
+<h2>标签页3</h2>
+<ul class="nav nav-pills nav-stacked"><!--胶囊式 纵向-->
+    <li class="active"><a href="">home1</a></li>
+    <li><a href="">home2</a></li>
+    <li><a href="">home3</a></li>
+</ul>
+</body>
+</html>
