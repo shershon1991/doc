@@ -88,7 +88,7 @@ func (app *App) loadConfig() {
 
 #### 3.3 初始化全局Logger
 
-`源文件`:https://github.com/52lu/goe/blob/master/app/initialize.go
+`源文件`:https://github.com/shershon1991/goe/blob/master/app/initialize.go
 
 ```go
 func setLoggerInstance() {
@@ -128,7 +128,7 @@ func setLoggerInstance() {
 
 #### 3.4 日志分类和自定义格式
 
-`源文件`:https://github.com/52lu/goe/blob/master/app/initialize.go
+`源文件`:https://github.com/shershon1991/goe/blob/master/app/initialize.go
 
 ```go
 /**

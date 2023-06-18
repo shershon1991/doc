@@ -598,7 +598,7 @@ Error: 参数数量不对
 package cmd
 
 import (
-	"52lu/go-cli/app/config"
+	"shershon1991/go-cli/app/config"
 	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -729,7 +729,7 @@ type mysql struct {
 ```yaml
 app:
   version: v1.0.0
-  author: 刘庆辉
+  author: Shershon
   port: 8080
 mysql:
   host: 127.0.0.1
@@ -743,7 +743,7 @@ mysql:
 ```yaml
 app:
   version: v1.0.2
-  author: 刘庆辉
+  author: Shershon
   port: 8081
 mysql:
   host: 192.168.0.10
@@ -760,7 +760,7 @@ mysql:
 
 # 默认启动http
 ➜ ./cli server
-&{App:{Version:v1.0.0 Author:刘庆辉 Port:8080} MySql:{Host:127.0.0.1 DataBase: User:root Password:root}}
+&{App:{Version:v1.0.0 Author:Shershon Port:8080} MySql:{Host:127.0.0.1 DataBase: User:root Password:root}}
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -771,7 +771,7 @@ mysql:
 
 # 指定配置文件启动
 ➜ ./cli server --config=./local.yaml
-&{App:{Version:v1.0.2 Author:刘庆辉 Port:8081} MySql:{Host:192.168.0.10 DataBase: User:root Password:root}}
+&{App:{Version:v1.0.2 Author:Shershon Port:8081} MySql:{Host:192.168.0.10 DataBase: User:root Password:root}}
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.

@@ -222,7 +222,7 @@ mysql: map[host:127.0.0.1 password:123456 port:3306 user:root]
 
 ```yaml
 name: Gin-use
-author: 刘庆辉
+author: Shershon
 ```
 
 #### 5.2 代码示例
@@ -258,8 +258,8 @@ func main() {
 	fmt.Printf("别名UserName:%+v\n", v.GetString("UserName"))
 }
 /**输出
-testConfig:{Name:测试配置覆盖 Author:刘庆辉}
-别名UserName:刘庆辉
+testConfig:{Name:测试配置覆盖 Author:Shershon}
+别名UserName:Shershon
 */
 ```
 

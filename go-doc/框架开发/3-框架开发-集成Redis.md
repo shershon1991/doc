@@ -86,7 +86,7 @@ func connectRedis() {
 
 ### 5.使用
 
-**源码文件**：https://github.com/52lu/goe/blob/master/app/controllers/v1/redis.go
+**源码文件**：https://github.com/shershon1991/goe/blob/master/app/controllers/v1/redis.go
 
 #### 5.1 Set & Get
 

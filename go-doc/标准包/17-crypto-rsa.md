@@ -133,14 +133,14 @@ func ReadRSAPublicKey(path string) (*rsa.PublicKey, error) {
 func TestReadKey(t *testing.T) {
 	// pkcs1格式-私钥
 	privatePKCS1KeyPath := "../../tmp/private_ssl.pem"
-	privatePKCS1Key, err := crypto.ReadRSAPKCS1PrivateKey(privatePKCS1KeyPath)
+	privatePKCS1Key, err := cryptopkg.ReadRSAPKCS1PrivateKey(privatePKCS1KeyPath)
 	if err != nil {
 		t.Error(err)
 	}
 	fmt.Printf("PKCS1私钥: %#v\n",privatePKCS1Key)
 	// pkcs8格式-公钥
 	publicPKCS8KeyPath := "../../tmp/public_ssl.pem"
-	publicPKCS8Key, err := crypto.ReadRSAPublicKey(publicPKCS8KeyPath)
+	publicPKCS8Key, err := cryptopkg.ReadRSAPublicKey(publicPKCS8KeyPath)
 	if err != nil {
 		t.Error(err)
 	}
@@ -179,7 +179,7 @@ func RSAEncrypt(data, publicKeyPath string) (string, error) {
 func TestRsaEncrypt(t *testing.T) {
 	publicKeyPath := "../../tmp/public_ssl.pem"
 	data := "123456"
-	encrypt, err := crypto.RSAEncrypt(data, publicKeyPath)
+	encrypt, err := cryptopkg.RSAEncrypt(data, publicKeyPath)
 	if err != nil {
 		t.Error(err)
 	}
@@ -223,7 +223,7 @@ func RSADecrypt(base64data,privateKeyPath string) (string,error) {
 func TestRsaDecrypt(t *testing.T) {
 	privateKeyPath := "../../tmp/private_ssl.pem"
 	data := "pUYa4set6XkBshfio5g2hzPx1tA67sxEvJBpJiuK3McJ9cPJAXzuRkWIy4s6cDQOhrPUaNXhr3M3WLHH19/eaqcNZz1yOFZwgGKmkWtdmygtLB/wrDant9uRfXrvzlV9iMq+cUlqsrwuCa0wcGEBNHRhIJOQSTs+SxaRTeoRCbU="
-	encrypt, err := crypto.RSADecrypt(data, privateKeyPath)
+	encrypt, err := cryptopkg.RSADecrypt(data, privateKeyPath)
 	if err != nil {
 		t.Error(err)
 	}
@@ -256,7 +256,7 @@ func GetRSASign(data, privateKeyPath string) (string, error) {
 	hash.Write([]byte(data))
 	sum := hash.Sum(nil)
 	// 从1.5版本规定，使用RSASSA-PKCS1-V1_5-SIGN 方案计算签名
-	signPKCS1v15, err := rsa.SignPKCS1v15(rand.Reader, privateKey, crypto.SHA256, sum)
+	signPKCS1v15, err := rsa.SignPKCS1v15(rand.Reader, privateKey, cryptopkg.SHA256, sum)
 	// 结果转成base64
 	toString := base64.StdEncoding.EncodeToString(signPKCS1v15)
 	return toString, err
@@ -270,7 +270,7 @@ func GetRSASign(data, privateKeyPath string) (string, error) {
 func TestAddSign(t *testing.T) {
 	privateKeyPath := "../../tmp/private_ssl.pem"
 	data := "123456"
-	sign, err := crypto.GetRSASign(data,privateKeyPath)
+	sign, err := cryptopkg.GetRSASign(data,privateKeyPath)
 	if err != nil {
 		t.Error(err)
 	}
@@ -305,7 +305,7 @@ func VerifyRsaSign(data, publicKeyPath, base64Sign string) (bool, error) {
 	hash := sha256.New()
 	hash.Write([]byte(data))
 	bytes := hash.Sum(nil)
-	err = rsa.VerifyPKCS1v15(publicKey, crypto.SHA256, bytes, sign)
+	err = rsa.VerifyPKCS1v15(publicKey, cryptopkg.SHA256, bytes, sign)
 	return err == nil, err
 }
 ```
@@ -318,7 +318,7 @@ func TestVaSign(t *testing.T) {
 	publicKeyPath := "../../tmp/public_ssl.pem"
 	data := "123456"
 	sign := "QnGqGbIqoHjJG1l+JiaOKWBdX+h00lnKCoO2rTYKIro9hoaDj7nqmu+Mxsuo+2jumicvCNBZNOpMzYryjZf0x7Q4ycLBtqtCWuFRasiInUO7Avy19LRTjdMf2xw9968vilB/xEAQ53JXIDUVvCsMxTfpHI9oRiWEGXWNkhfkjkQ="
-	verifyRsaSign,err := crypto.VerifyRsaSign(data, publicKeyPath, sign)
+	verifyRsaSign,err := cryptopkg.VerifyRsaSign(data, publicKeyPath, sign)
 	if err != nil {
 		fmt.Printf("验签失败: %v \n",err)
 	}

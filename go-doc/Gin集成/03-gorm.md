@@ -227,7 +227,7 @@ func setNewLogger(gConfig *gorm.Config) {
 package entity
 
 import (
-	"52lu/go-import-template/global"
+	"shershon1991/go-import-template/global"
 )
 
 // 用户表
@@ -260,8 +260,8 @@ type UserInfo struct {
 package core
 
 import (
-	"52lu/go-import-template/global"
-	"52lu/go-import-template/model/entity"
+	"shershon1991/go-import-template/global"
+	"shershon1991/go-import-template/model/entity"
 	"fmt"
 	"gorm.io/gorm"
 )
@@ -305,11 +305,11 @@ func AutoMigrate() {
 package v1
 
 import (
-	"52lu/go-import-template/global"
-	"52lu/go-import-template/model/entity"
-	"52lu/go-import-template/model/request"
-	"52lu/go-import-template/model/response"
-	"52lu/go-import-template/service"
+	"shershon1991/go-import-template/global"
+	"shershon1991/go-import-template/model/entity"
+	"shershon1991/go-import-template/model/request"
+	"shershon1991/go-import-template/model/response"
+	"shershon1991/go-import-template/service"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -363,7 +363,7 @@ func Login(ctx *gin.Context) {
 ```go
 package router
 import (
-	v1 "52lu/go-import-template/api/v1"
+	v1 "shershon1991/go-import-template/api/v1"
 	"github.com/gin-gonic/gin"
 )
 /**
@@ -393,9 +393,9 @@ func InitUserRouter(engine *gin.Engine) {
 package service
 
 import (
-	"52lu/go-import-template/global"
-	"52lu/go-import-template/model/entity"
-	"52lu/go-import-template/model/request"
+	"shershon1991/go-import-template/global"
+	"shershon1991/go-import-template/model/entity"
+	"shershon1991/go-import-template/model/request"
 	"gorm.io/gorm"
 )
 

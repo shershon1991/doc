@@ -56,7 +56,7 @@ type jwt struct {
 
 ## 3. 编辑中间件
 
-**文件位置:`./middleware/jwt.go`**，功能包括有`中间件函数/创建Token/解析Token`
+文件位置:`./middleware/jwt.go`，功能包括有`中间件函数/创建Token/解析Token`
 
 ### 3.1 中间件函数
 
@@ -67,10 +67,10 @@ type jwt struct {
 package middleware
 
 import (
-	"52lu/go-import-template/global"
-	"52lu/go-import-template/model/dao"
-	"52lu/go-import-template/model/request"
-	"52lu/go-import-template/model/response"
+	"shershon1991/go-import-template/global"
+	"shershon1991/go-import-template/model/dao"
+	"shershon1991/go-import-template/model/request"
+	"shershon1991/go-import-template/model/response"
 	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"

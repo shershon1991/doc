@@ -174,8 +174,8 @@ func addJob(c *cron.Cron) {
 
 ```bash
 ...
-[GIN-debug] GET    /demo/es/create           --> 52lu/fund-analye-system/api/demo.CreateIndex (3 handlers)
-[GIN-debug] GET    /demo/es/searchById       --> 52lu/fund-analye-system/api/demo.SearchById (3 handlers)
+[GIN-debug] GET    /demo/es/create           --> shershon1991/fund-analye-system/api/demo.CreateIndex (3 handlers)
+[GIN-debug] GET    /demo/es/searchById       --> shershon1991/fund-analye-system/api/demo.SearchById (3 handlers)
 
 【 当前环境: dev 当前版本: v1.0.0 接口地址: http://0.0.0.0:8088 】
 基金排行榜-定时任务准备运行....

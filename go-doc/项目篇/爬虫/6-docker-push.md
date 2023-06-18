@@ -156,8 +156,8 @@ app_1  | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode
 app_1  |  - using env:	export GIN_MODE=release
 app_1  |  - using code:	gin.SetMode(gin.ReleaseMode)
 app_1  |
-app_1  | [GIN-debug] GET    /system/config            --> 52lu/fund-analye-system/api/demo.GetConfig (3 handlers)
-app_1  | [GIN-debug] POST   /demo/user/login          --> 52lu/fund-analye-system/api/demo.Login (3 handlers)
+app_1  | [GIN-debug] GET    /system/config            --> shershon1991/fund-analye-system/api/demo.GetConfig (3 handlers)
+app_1  | [GIN-debug] POST   /demo/user/login          --> shershon1991/fund-analye-system/api/demo.Login (3 handlers)
 app_1  | 【 当前环境: dev 当前版本: v1.0.0 接口地址: http://0.0.0.0:8081 启动时间:2021-10-18 22:10:23 】
 ```
 
@@ -175,9 +175,9 @@ Attaching to fund-server_app_1
 app_1  | panic: 创建mysql客户端失败: dial tcp 172.20.0.1:3306: connect: no route to host, {172.20.0.1 3306 root root fund_system utf8mb4 false true Local 255 true false {false true false false fas_ true} 50ms info true true}
 app_1  |
 app_1  | goroutine 1 [running]:
-app_1  | 52lu/fund-analye-system/initialize.initGorm()
+app_1  | shershon1991/fund-analye-system/initialize.initGorm()
 app_1  | 	/build/initialize/gorm.go:50 +0x6ae
-app_1  | 52lu/fund-analye-system/initialize.SetLoadInit()
+app_1  | shershon1991/fund-analye-system/initialize.SetLoadInit()
 app_1  | 	/build/initialize/load.go:9 +0x2f
 app_1  | main.main()
 app_1  | 	/build/main.go:18 +0x45

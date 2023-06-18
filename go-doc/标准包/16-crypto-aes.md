@@ -59,7 +59,7 @@ func PKCS7Padding(originByte []byte, blockSize int) []byte {
 ```go
 package crypto
 import (
-	"52lu/go-study-example/package/crypto"
+	"shershon1991/go-tools/app/cryptopkg"
 	"fmt"
 	"strings"
 	"testing"
@@ -68,7 +68,7 @@ import (
 func TestECBEncrypt(t *testing.T) {
 	key := strings.Repeat("a", 16)
 	data := "hello word"
-	s := crypto.AesEncryptByECB(data, key)
+	s := cryptopkg.AesEncryptByECB(data, key)
 	fmt.Printf("加密密钥: %v \n", key)
 	fmt.Printf("加密数据: %v \n", data)
 	fmt.Printf("加密结果: %v \n", s)
@@ -132,7 +132,7 @@ func PKCS7UNPadding(originDataByte []byte) []byte {
 func TestECBDecrypt(t *testing.T) {
 	key := strings.Repeat("a", 16)
 	data := "mMAsLF/fPBfUrP0mPqZm1w=="
-	s := crypto.AesDecryptByECB(data, key)
+	s := cryptopkg.AesDecryptByECB(data, key)
 	fmt.Printf("解密密钥: %v \n", key)
 	fmt.Printf("解密数据: %v \n", data)
 	fmt.Printf("解密结果: %v \n", s)
@@ -196,7 +196,7 @@ func PKCS7Padding(originByte []byte, blockSize int) []byte {
 ```go
 package crypto
 import (
-	"52lu/go-study-example/package/crypto"
+	"shershon1991/go-tools/app/cryptopkg"
 	"fmt"
 	"strings"
 	"testing"
@@ -207,7 +207,7 @@ func TestAesEncryptByCBC(t *testing.T) {
 	fmt.Printf("key: %v 长度: %d \n", key, len(key))
 	text := "abc"
 	fmt.Printf("带加密文案: %v \n", text)
-	encrypt := crypto.AesEncryptByCBC(text, key)
+	encrypt := cryptopkg.AesEncryptByCBC(text, key)
 	fmt.Printf("加密结果: %v \n", encrypt)
 }
 /** 输出
@@ -269,7 +269,7 @@ func PKCS7UNPadding(originDataByte []byte) []byte {
 ```go
 package crypto
 import (
-	"52lu/go-study-example/package/crypto"
+	"shershon1991/go-tools/app/cryptopkg"
 	"fmt"
 	"strings"
 	"testing"
@@ -280,7 +280,7 @@ func TestAesDecryptByCBC(t *testing.T) {
 	fmt.Printf("key: %v 长度: %d \n", key, len(key))
 	text := "rMX6r9x+PnTOhfgDH4jjXg=="
 	fmt.Printf("待解密文案: %v \n", text)
-	decrypt := crypto.AesDecryptByCBC(text, key)
+	decrypt := cryptopkg.AesDecryptByCBC(text, key)
 	fmt.Printf("解密结果: %v \n", decrypt)
 }
 
@@ -349,7 +349,7 @@ func PKCS7Padding(originByte []byte, blockSize int) []byte {
 ```go
 package crypto
 import (
-	"52lu/go-study-example/package/crypto"
+	"shershon1991/go-tools/app/cryptopkg"
 	"fmt"
 	"strings"
 	"testing"
@@ -358,7 +358,7 @@ import (
 func TestAesEncryptByCTR(t *testing.T) {
 	key := strings.Repeat("a", 16)
 	data := "hello word"
-	hex, base64 := crypto.AesEncryptByCTR(data, key)
+	hex, base64 := cryptopkg.AesEncryptByCTR(data, key)
 	fmt.Printf("加密key: %v \n", key)
 	fmt.Printf("加密key长度: %v \n", len(key))
 	fmt.Printf("加密数据: %v \n", data)
@@ -422,7 +422,7 @@ func AesDecryptByCTR(dataBase64,key string)  string {
 ```go
 package crypto
 import (
-	"52lu/go-study-example/package/crypto"
+	"shershon1991/go-tools/app/cryptopkg"
 	"fmt"
 	"strings"
 	"testing"
@@ -431,7 +431,7 @@ import (
 func TestAesDecryptByCTR(t *testing.T) {
 	key := strings.Repeat("a", 16)
 	data := "Oe2qKyQC+9KgJu8UWLgbVQ=="
-	res := crypto.AesDecryptByCTR(data, key)
+	res := cryptopkg.AesDecryptByCTR(data, key)
 	fmt.Printf("解密key: %v \n", key)
 	fmt.Printf("解密数据: %v \n", data)
 	fmt.Printf("解密结果: %v \n", res)
@@ -448,7 +448,7 @@ PASS
 
 ### 5. CFB、OFB
 
-和`CTR`模式一样，只需要修改加密模式即可,[查看具体源码 https://github.com/52lu/go-study-example](https://github.com/52lu/go-study-example)
+和`CTR`模式一样，只需要修改加密模式即可
 
 ```go
 // CFB
@@ -467,9 +467,9 @@ stream := cipher.NewOFB(block, iv)
 func TestAesEncryptByOFB(t *testing.T) {
 	key := strings.Repeat("a", 16)
 	data := "123"
-	_, base64 := crypto.AesEncryptByOFB(data, key)
-	_, base642 := crypto.AesEncryptByCTR(data, key)
-	_, base643 := crypto.AesEncryptByCFB(data, key)
+	_, base64 := cryptopkg.AesEncryptByOFB(data, key)
+	_, base642 := cryptopkg.AesEncryptByCTR(data, key)
+	_, base643 := cryptopkg.AesEncryptByCFB(data, key)
 	fmt.Printf("加密key: %v \n", key)
 	fmt.Printf("加密key长度: %v \n", len(key))
 	fmt.Printf("加密数据: %v \n", data)
@@ -555,7 +555,7 @@ func AesDecryptByGCM(data, key string) string {
 ```go
 package crypto
 import (
-	"52lu/go-study-example/package/crypto"
+	"shershon1991/go-tools/app/cryptopkg"
 	"fmt"
 	"strings"
 	"testing"
@@ -564,12 +564,12 @@ func TestAesGCM(t *testing.T) {
 	key := strings.Repeat("a",16)
 	data := "hello word!"
 	// 加密
-	gcm := crypto.AesEncryptByGCM(data, key)
+	gcm := cryptopkg.AesEncryptByGCM(data, key)
 	fmt.Printf("密钥key: %s \n",key)
 	fmt.Printf("加密数据: %s \n",data)
 	fmt.Printf("加密结果: %s \n",gcm)
 	// 解密
-	byGCM := crypto.AesDecryptByGCM(gcm, key)
+	byGCM := cryptopkg.AesDecryptByGCM(gcm, key)
 	fmt.Printf("解密结果: %s \n",byGCM)
 }
 /** 输出

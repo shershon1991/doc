@@ -117,7 +117,7 @@ func main() {
  **/
 package initialize
 import (
-	"52lu/go-import-template/global"
+	"shershon1991/go-import-template/global"
 	"context"
 	"github.com/go-redis/redis/v8"
 )
@@ -152,7 +152,7 @@ func InitRedis()  {
  **/
 package router
 import (
-	v1 "52lu/go-import-template/api/v1"
+	v1 "shershon1991/go-import-template/api/v1"
 	"github.com/gin-gonic/gin"
 )
 // 测试路由
