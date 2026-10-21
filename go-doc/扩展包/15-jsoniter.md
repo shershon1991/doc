@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(三十三):jsoniter"
+title: "Go扩展包(十五):jsoniter"
 date: 2021-05-03
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

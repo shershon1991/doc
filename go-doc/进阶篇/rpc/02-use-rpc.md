@@ -2,7 +2,7 @@
 title: "RPC编程(二):快速入门使用"
 date: 2021-07-02
 draft: false
-tags: [Go进阶]
+tags: [Go进阶,RPC]
 categories: [编程, Go]
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(二十一):excel"
+title: "Go扩展包(七):excel"
 date: 2021-04-21
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

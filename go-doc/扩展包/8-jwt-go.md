@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(二十二):jwt-go"
+title: "Go扩展包(八):jwt-go"
 date: 2021-04-22
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

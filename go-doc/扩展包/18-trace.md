@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(三十一):trace"
+title: "Go扩展包(十八):trace"
 date: 2021-05-01
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

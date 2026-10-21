@@ -2,7 +2,7 @@
 title: "RPC编程(三):gRPC快速入门"
 date: 2022-09-20 
 draft: false 
-tags: [Go进阶]
+tags: [Go进阶,RPC]
 categories: [编程, Go]
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(十四):bigCache"
+title: "Go扩展包(三):bigCache"
 date: 2021-04-14
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

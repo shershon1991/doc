@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(二十七):cron"
+title: "Go扩展包(十二):cron"
 date: 2021-04-27
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

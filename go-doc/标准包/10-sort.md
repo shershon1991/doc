@@ -1,5 +1,5 @@
 ---
-title: "Go标准包(十一):sort"
+title: "Go标准包(十):sort"
 date: 2021-04-11
 draft: false
 tags: [Go标准包]

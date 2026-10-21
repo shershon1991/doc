@@ -2,7 +2,7 @@
 title: "RPC编程(五):gRPC中的token认证"
 date: 2022-09-23T18:44:07+08:00
 draft: false 
-tags: [Go进阶]
+tags: [Go进阶,RPC]
 categories: [编程, Go]
 ---
 

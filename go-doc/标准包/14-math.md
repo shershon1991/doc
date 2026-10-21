@@ -1,5 +1,5 @@
 ---
-title: "Go标准包(二十):math"
+title: "Go标准包(十四):math"
 date: 2021-04-20
 draft: false
 tags: [Go标准包]

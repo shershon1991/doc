@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(十三):zap"
+title: "Go扩展包(二):zap"
 date: 2021-04-13
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

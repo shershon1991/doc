@@ -1,51 +1,51 @@
 ---
-title: "Go标准包(三十):pprof-2"
+title: "Go工具(三):性能调试利器pprof(二)"
 date: 2021-04-30
 draft: false
-tags: [Go标准包]
+tags: [Go工具]
 categories: [编程, Go]
 ---
 
-## 1. 调用图说明
+# 1. 调用图说明
 
-### 1.1 示例图
+## 1.1 示例图
 
 ![](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211116183312048.png)
 
-### 1.2 节点颜色
+## 1.2 节点颜色
 
 - 红色代表累计值cum为正，并且很大；
 - 绿色代表累计值cum为负，并且很大；
 - 灰色代表累计值cum可以忽略不计。
 
-### 1.3 节点字体大小
+## 1.3 节点字体大小
 
 - 较大的字体表示较大的当前值；
 - 较小的字体表示较小的当前值。
 
-### 1.4 边框颜色
+## 1.4 边框颜色
 
 - 当前值较大并且为正数时为红色；
 - 当前值较小并且为负数时为绿色；
 - 接近0的当前值为灰色。
 
-### 1.5 箭头大小
+## 1.5 箭头大小
 
 - 箭头**越粗**代表当前的路径消耗了越多的资源；
 - 箭头越细代表当前的路径消耗了越少的资源。
 
-### 1.6 箭头类型
+## 1.6 箭头类型
 
 - **虚线**箭头表示两个节点之间的某些节点已被忽略，为间接调用；
 - **实线**箭头表示两个节点之间为直接调用。
 
-## 2. 火焰图说明
+# 2. 火焰图说明
 
-### 2.1 示例图
+## 2.1 示例图
 
 ![](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211116190502651.png)
 
-### 2.2 含义说明
+## 2.2 含义说明
 
 - 最上方的`root`框代表整个程序的开始，其他的框都代表一个函数。
 - 火焰图每一层中的函数都是平级的，下层函数是其对应的上层函数的子函数。
@@ -54,11 +54,14 @@ categories: [编程, Go]
 - 可以单击任何框，查看该函数更详细的信息。
 
 
-> **<font color=red>排查三步曲: </font>**`top: 根据资源排序； list：查看具体代码信息;web:在浏览器中打开调用图`
+> <font color=red>排查三步曲: </font>
+> - `top: 根据资源排序`
+> - `list: 查看具体代码信息`
+> - `web: 在浏览器中打开调用图`
 
-## 3. 排查内存占用高
+# 3. 排查内存占用高
 
-### 3.1 进入交互式
+## 3.1 进入交互式
 
 ```bash
 # 这里的app是编译后的文件名
@@ -71,7 +74,7 @@ Time: Nov 16, 2021 at 9:14pm (CST)
 Entering interactive mode (type "help" for commands, "o" for options)
 ```
 
-### 3.2 定位内存最高
+## 3.2 定位内存最高
 
 ```bash
 (pprof) top
@@ -83,7 +86,7 @@ Showing nodes accounting for 5290.49kB, 100% of 5290.49kB total
          0     0%   100%  1024.02kB 19.36%  shershon1991/go-pprof/scenes.getGirl
 ```
 
-### 3.3 查看具体代码
+## 3.3 查看具体代码
 
 ```bash
 (pprof) list UseHeapDemo
@@ -109,7 +112,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.UseHeapDemo.func1 
 
 
 
-### 3.4 在浏览器中查看
+## 3.4 在浏览器中查看
 
 ```bash
 (pprof) web
@@ -119,9 +122,9 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.UseHeapDemo.func1 
 
 
 
-## 4. 排查CPU占用高
+# 4. 排查CPU占用高
 
-### 4.1 进入交互式
+## 4.1 进入交互式
 
 ```bash
 # 这里的app是编译后的文件名
@@ -136,7 +139,7 @@ Entering interactive mode (type "help" for commands, "o" for options)
 (pprof)
 ```
 
-### 4.2 定位cpu占用最高
+## 4.2 定位cpu占用最高
 
 ```bash
 (pprof) top
@@ -154,7 +157,7 @@ flat  flat%   sum%        cum   cum%
 0     0% 99.49%      0.08s  0.51%  runtime.schedule
 ```
 
-### 4.3 查看具体代码
+## 4.3 查看具体代码
 
 ```bash
 (pprof) list compute
@@ -172,7 +175,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.compute in /Users/
          .          .     14:	fmt.Println("遍历完成")
          .          .     15:}
 ```
-### 4.4 在浏览器中查看
+## 4.4 在浏览器中查看
 
 ```bash
 (pprof) web
@@ -182,17 +185,18 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.compute in /Users/
 
 ![](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211116210821560.png)
 
-## 5. 排查协程泄露
+# 5. 排查协程泄露
 
 > 分析协程栈有两方面的作用，一是查看协程的数量，查看协程是否泄漏。二是查看当前大量的协程在执行哪些函数，判断当前协程是否健康。
 
-### 5.1 什么是协程泄露
+## 5.1 什么是协程泄露
 
 `Go`的并发是以`goroutine`和`channel`的形式实现的。<font color=blue><b>协程泄露是指`goroutine`创建后，长时间得不到释放，并且还在不断地创建新的`goroutine`协程，最终导致内存耗尽，程序崩溃。</b></font>
 
-### 5.2 进入交互式
+## 5.2 进入交互式
 
 ```bash
+# 这里的app是编译后的文件名
 ➜ go tool pprof app http://127.0.0.1:6060/debug/pprof/goroutine
 Fetching profile over HTTP from http://127.0.0.1:6060/debug/pprof/goroutine
 Saved profile in /Users/liuqh/pprof/pprof.app.goroutine.007.pb.gz
@@ -202,7 +206,7 @@ Time: Nov 16, 2021 at 9:43pm (CST)
 Entering interactive mode (type "help" for commands, "o" for options)
 ```
 
-### 5.3 定位协程情况
+## 5.3 定位协程情况
 
 ```bash
 (pprof) top
@@ -225,7 +229,7 @@ Showing top 10 nodes out of 41
 
 从上面看到有35个协程都在`runtime.gopark`函数,`runtime.gopark`:代表协程处于休眠状态，其中有30个协程是由`scenes.errorUse.func1`产出。
 
-### 5.4 查看具体代码
+## 5.4 查看具体代码
 
 ```bash
 (pprof) list errorUse.func1
@@ -245,7 +249,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.errorUse.func1 in 
          .          .     19:	res := make(chan []int)
 ```
 
-### 5.5 在浏览器中查看
+## 5.5 在浏览器中查看
 
 ```bash
 (pprof) web
@@ -255,7 +259,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.errorUse.func1 in 
 
 
 
-### 5.6 base基准分析
+## 5.6 base基准分析
 
 除了上面的分析方法，`pprof`还提供了更强大的工具用于对比前后特征文件的不同。下例使用了`-base`标志，后跟基准特征文件。
 
@@ -287,7 +291,7 @@ Showing nodes accounting for 28, 100% of 28 total
 
 <font color=red><b>从上面可以看出，后一个基准特征文件比前一个基准特征文件多了28个协程，其中28个协程都处于执行runtime.gopark阶段，从而可以判断协程是否已经泄漏。</b></font>
 
-## 6. 排查锁竞争情况
+# 6. 排查锁竞争情况
 
 `mutex`主要用于查看锁争用导致的休眠时间，这有助于排查由于锁争用导致`CPU`利用率不足的问题,<font color=red><b>需要注意的是：默认不开启锁的竞争分析，需要调用runtime.SetMutexProfileFraction进行设置。</b></font>开启方式如下:
 
@@ -305,10 +309,11 @@ func init() {
 }
 ```
 
-### 6.1 进入交互式
+## 6.1 进入交互式
 
 ```bash
-➜ go tool pprof http://127.0.0.1:6060/debug/pprof/mutex
+# 这里的app是编译后的文件名
+➜ go tool pprof app http://127.0.0.1:6060/debug/pprof/mutex
 Fetching profile over HTTP from http://127.0.0.1:6060/debug/pprof/mutex
 Saved profile in /Users/liuqh/pprof/pprof.contentions.delay.007.pb.gz
 Type: delay
@@ -316,7 +321,7 @@ Time: Nov 17, 2021 at 3:04pm (CST)
 Entering interactive mode (type "help" for commands, "o" for options)
 ```
 
-### 6.2 排序互斥耗时
+## 6.2 排序互斥耗时
 
 ```bash
 (pprof) top
@@ -328,7 +333,7 @@ Showing nodes accounting for 37.09s, 100% of 37.09s total
 
 **<font color=red>由上面可以看出，锁争用集中在互斥锁中，互斥带来的休眠时间为37.09s</font>**
 
-### 6.3 查看具体代码
+## 6.3 查看具体代码
 
 ```bash
 # 查看具体函数
@@ -343,7 +348,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.UseMutexDemo.func1
          .          .     25:}
 ```
 
-### 6.4 在浏览器中查看
+## 6.4 在浏览器中查看
 
 ```bash
 (pprof) web
@@ -351,7 +356,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.UseMutexDemo.func1
 
 ![image-20211117151609825](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211117151609825.png)
 
-## 7. 排查阻塞操作
+# 7. 排查阻塞操作
 
 在程序中，除了锁的争用会导致阻塞之外，很多逻辑都会导致阻塞，比如网络请求超时、IO阻塞等。<font color=red><b>需要注意的是：默认不开启阻塞分析，需要调用runtime.SetMutexProfileFraction进行设置。</b></font>开启方式如下:
 
@@ -365,20 +370,21 @@ func init() {
 
 
 
-### 7.1 查看`/debug/pprof`
+## 7.1 查看`/debug/pprof`
 
-#### 1. 当前阻塞数量
+### 1. 当前阻塞数量
 
 ![](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211117163248036.png)
 
-#### 2. 具体阻塞位置
+### 2. 具体阻塞位置
 
 ![](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211117190151155.png)
 
-### 7.2 进入交互式
+## 7.2 进入交互式
 
 ```bash
-➜ go tool pprof http://127.0.0.1:6060/debug/pprof/block
+# 这里的app是编译后的文件名
+➜ go tool pprof app http://127.0.0.1:6060/debug/pprof/block
 Fetching profile over HTTP from http://127.0.0.1:6060/debug/pprof/block
 Saved profile in /Users/liuqh/pprof/pprof.contentions.delay.012.pb.gz
 Type: delay
@@ -386,7 +392,7 @@ Time: Nov 17, 2021 at 4:30pm (CST)
 Entering interactive mode (type "help" for commands, "o" for options)
 ```
 
-### 7.3 排序阻塞时间
+## 7.3 排序阻塞时间
 
 ```bash
 (pprof) top
@@ -402,7 +408,7 @@ Dropped 4 nodes (cum <= 0.30s)
 
 - `runtime.chanrecv1`: 代表通道`chan`读取时，阻塞。
 
-### 7.4 查看具体阻塞代码
+## 7.4 查看具体阻塞代码
 
 ```bash
 # 查看UseBlockDemo函数，发现内部调用函数handle，且handle函数耗时59.75s
@@ -449,7 +455,7 @@ ROUTINE ======================== shershon1991/go-pprof/scenes.handle in /Users/l
          .          .     36:
 ```
 
-### 7.5 在浏览器中查看
+## 7.5 在浏览器中查看
 
 ![](https://raw.githubusercontent.com/shershon1991/picImgBed/master/go/img/image-20211117190256045.png)
 

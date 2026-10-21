@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(二十八):cobra"
+title: "Go扩展包(十三):cobra"
 date: 2021-04-28
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

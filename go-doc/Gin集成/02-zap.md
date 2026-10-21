@@ -2,7 +2,7 @@
 title: "Gin集成(二):集成高性能日志zap"
 date: 2021-12-14
 draft: false
-tags: [Gin集成]
+tags: [Gin集成,Gin框架]
 categories: [编程, Go]
 ---
 

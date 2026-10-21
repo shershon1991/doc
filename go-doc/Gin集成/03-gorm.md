@@ -2,7 +2,7 @@
 title: "Gin集成(三):集成全功能orm框架-gorm"
 date: 2021-12-15
 draft: false
-tags: [Gin集成]
+tags: [Gin集成,Gin框架]
 categories: [编程, Go]
 ---
 

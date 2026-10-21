@@ -2,7 +2,7 @@
 title: "RPC编程(一):初步了解RPC"
 date: 2021-07-01
 draft: false
-tags: [Go进阶]
+tags: [Go进阶,RPC]
 categories: [编程, Go]
 ---
 

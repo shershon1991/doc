@@ -2,7 +2,7 @@
 title: "RPC编程(六):gRPC中的截取器"
 date: 2022-09-25T16:03:00+08:00
 draft: false 
-tags: [Go进阶]
+tags: [Go进阶,RPC]
 categories: [编程, Go]
 ---
 

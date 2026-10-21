@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(三十二):go-funk"
+title: "Go扩展包(十四):go-funk"
 date: 2021-05-02
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

@@ -2,7 +2,7 @@
 title: "Gin集成(一):集成viper配置解析包"
 date: 2021-12-13
 draft: false
-tags: [Gin集成]
+tags: [Gin集成,Gin框架]
 categories: [编程, Go]
 ---
 

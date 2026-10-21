@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(二十九):pprof"
+title: "Go扩展包(十六):pprof"
 date: 2021-04-29
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 

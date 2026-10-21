@@ -2,7 +2,7 @@
 title: "RPC编程(四):protobuf语法学习"
 date: 2022-09-20 11:44:00 
 draft: false 
-tags: [Go进阶]
+tags: [Go进阶,RPC]
 categories: [编程, Go]
 ---
 

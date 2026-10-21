@@ -2,7 +2,7 @@
 title: "Gin集成(四):集成JWT"
 date: 2021-12-16
 draft: false
-tags: [Gin集成]
+tags: [Gin集成,Gin框架]
 categories: [编程, Go]
 ---
 

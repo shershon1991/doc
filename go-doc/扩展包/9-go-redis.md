@@ -1,8 +1,8 @@
 ---
-title: "Go标准包(二十三):go-redis"
+title: "Go扩展包(九):go-redis"
 date: 2021-04-23
 draft: false
-tags: [Go标准包]
+tags: [Go扩展包]
 categories: [编程, Go]
 ---
 
